@@ -1,0 +1,17 @@
+name: 'Build Site'
+# Should protect main branch and change this to "push"
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        run: ./build-site.sh
+      - name: Upload Build Artifats
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: ${{ github.workspace }}/build/html
+      # Should add webhook notifying hosting server to pull artifact.
