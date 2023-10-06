@@ -17,7 +17,7 @@ jobs:
         with:
           files: site.tar.gz
       - name: Webhook
-        uses: joelwmale/webhook-action@v2.3.2
+        uses: joelwmale/webhook-action@2.3.2
         with:
           #${{ secrets.WEBHOOK_URL }}
           url: https://bessems.org/test.php
