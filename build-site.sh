@@ -8,3 +8,5 @@ popd
 python3 -m pip install -r requirements.txt
 
 sphinx-build -M html tutorial build
+
+tar -czvf site.tar.gz build/html
