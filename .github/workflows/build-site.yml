@@ -21,7 +21,7 @@ jobs:
         with:
           #${{ secrets.WEBHOOK_URL }}
           url: https://bessems.org/test.php
-          body: '{"file": ${{ steps.upload.outputs.upload_url }}, "release": "${{github.ref}}"}'
+          body: '{"file": "${{ steps.upload.outputs.url }}/site.tar.gz"", "release": "${{github.ref}}"}'
       # - name: Upload Build Artifats
         # uses: actions/upload-artifact@v3
         # with:
