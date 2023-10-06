@@ -19,12 +19,5 @@ jobs:
       - name: Webhook
         uses: joelwmale/webhook-action@2.3.2
         with:
-          #${{ secrets.WEBHOOK_URL }}
-          url: https://bessems.org/test.php
-          body: '{"file": "${{ steps.upload.outputs.url }}/site.tar.gz"", "release": "${{github.ref}}"}'
-      # - name: Upload Build Artifats
-        # uses: actions/upload-artifact@v3
-        # with:
-        #   name: site
-        #   path: ${{ github.workspace }}/build/html
-      # Should add webhook notifying hosting server to pull artifact.
+          url: ${{ secrets.WEBHOOK_URL }}
+          body: '{"file": "${{ steps.upload.outputs.url }}/site.tar.gz", "release": "${{github.ref}}"}'
